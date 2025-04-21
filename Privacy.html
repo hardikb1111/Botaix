@@ -95,18 +95,27 @@
         text-align: right;
       }
 
-      footer {
-        background-color: var(--footer-bg);
-        padding: 2rem;
-        text-align: center;
-        margin-top: 2rem;
-        border-top: 1px solid #ddd;
-      }
-      .footer-navigation {
+footer {
+  background-color: var(--footer-bg);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+/* For the copyright and message */
+footer p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer-navigation {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
   width: 100%;
+  max-width: 900px; /* Match your container width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-link {
