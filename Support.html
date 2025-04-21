@@ -495,9 +495,21 @@
         .getElementById("supportForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-          alert(
-            "Thank you for your message. Our support team will contact you shortly."
-          );
+          
+          // Get form data
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const issue = document.getElementById("issue").value;
+          const message = document.getElementById("message").value;
+          
+          // Create mailto link with form data
+          const mailtoLink = `mailto:botanixapp@yahoo.com?subject=BotaniX Support Request: ${issue}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AIssue Type: ${issue}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+          
+          // Open the user's email client
+          window.open(mailtoLink);
+          
+          // Alert and reset form
+          alert("Thank you for your message. Our support team will contact you shortly. Your email client should open to send this request to our team.");
           this.reset();
         });
     </script>
