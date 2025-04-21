@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BotaniX - Support</title>
+    <style>
+      :root {
+        --primary-color: #2e7d32;
+        --secondary-color: #81c784;
+        --text-color: #333333;
+        --light-bg: #f9fbf7;
+        --accent-color: #ffc107;
+        --footer-bg: #f1f8e9;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-color: var(--light-bg);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+      .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .tagline {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 0 0 8px 8px;
+      }
+      h1 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--secondary-color);
+      }
+      h2 {
+        color: var(--primary-color);
+        margin: 2rem 0 1rem;
+        font-size: 1.5rem;
+      }
+      h3 {
+        color: var(--secondary-color);
+        margin: 1.5rem 0 0.75rem;
+        font-size: 1.25rem;
+      }
+      p,
+      ul {
+        margin-bottom: 1.5rem;
+      }
+      ul {
+        padding-left: 2rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      .highlight {
+        background-color: #fff9c4;
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-color);
+      }
+      .faq-item {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1.5rem;
+      }
+      .faq-question {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+      .faq-answer {
+        padding-left: 1rem;
+        border-left: 3px solid var(--secondary-color);
+      }
+      .app-details {
+        background-color: #f1f8e9;
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 1.5rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem;
+      }
+      .app-details p {
+        margin: 0.3rem 0;
+      }
+      .support-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .support-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .support-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .support-card h3 {
+        color: var(--primary-color);
+        margin-top: 0;
+      }
+      .support-card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--secondary-color);
+      }
+      .contact-form {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .form-group textarea {
+        min-height: 150px;
+      }
+      .submit-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+      .submit-btn:hover {
+        background-color: #1b5e20;
+      }
+      footer {
+        background-color: var(--footer-bg);
+        padding: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid #ddd;
+      }
+      .contact-btn {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 1rem;
+        transition: background-color 0.3s;
+      }
+      .contact-btn:hover {
+        background-color: #1b5e20;
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1rem 0;
+      }
+      .nav-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+      .footer-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .footer-btn {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        display: inline-flex;
+        align-items: center;
+      }
+      .footer-btn:hover {
+        background-color: #1b5e20;
+      }
+      .footer-btn-icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 1.5rem;
+        }
+        header {
+          padding: 1.5rem 0;
+        }
+        .logo {
+          font-size: 2rem;
+        }
+        .support-options {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">BotaniX</div>
+      <div class="tagline">
+        Smarter Plant Recommendation & Easier Plant Care
+      </div>
+    </header>
+    <div class="container">
+      <h1>Support Center</h1>
+      <div class="app-details">
+        <p><strong>App Name:</strong> BotaniX</p>
+        <p><strong>Version:</strong> 1.0</p>
+        <p><strong>Size:</strong> 7.8MB</p>
+        <p>
+          <strong>Compatibility:</strong> Requires iOS 17 or later. Compatible
+          with iPhone.
+        </p>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </div>
+      <h2>How Can We Help You?</h2>
+      <div class="support-options">
+        <div class="support-card">
+          <div class="support-card-icon">📱</div>
+          <h3>App Issues</h3>
+          <p>
+            Get help with app installation, login problems, or technical
+            difficulties
+          </p>
+          <a href="#app-issues" class="contact-btn">View FAQs</a>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">🌱</div>
+          <h3>Plant Care</h3>
+          <p>
+            Questions about plant recommendations, disease detection, or care
+            guides
+          </p>
+          <a href="#plant-care" class="contact-btn">View FAQs</a>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">👥</div>
+          <h3>Community</h3>
+          <p>Learn how to get the most out of the BotaniX community features</p>
+          <a href="#community" class="contact-btn">View FAQs</a>
+        </div>
+      </div>
+      <h2 id="app-issues">App Issues FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          Why does the app need access to my camera?
+        </div>
+        <div class="faq-answer">
+          <p>
+            BotaniX uses your camera to scan plants and soil for identification,
+            disease detection, and soil analysis. Without camera access, these
+            core features will not function. We only access your camera when you
+            actively use the scanning features.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          The app keeps crashing when I try to scan a plant. What should I do?
+        </div>
+        <div class="faq-answer">
+          <p>Try these troubleshooting steps:</p>
+          <ul>
+            <li>Make sure your iOS is updated to version 17 or later</li>
+            <li>
+              Close other apps running in the background to free up memory
+            </li>
+            <li>Restart the app or your device</li>
+            <li>Check if you have sufficient storage space available</li>
+            <li>Ensure good lighting conditions when scanning</li>
+          </ul>
+          <p>
+            If the issue persists, please contact our support team with details
+            about your device model and iOS version.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I reset my password?</div>
+        <div class="faq-answer">
+          <p>To reset your password:</p>
+          <ol>
+            <li>Tap "Login" on the home screen</li>
+            <li>Select "Forgot Password"</li>
+            <li>Enter your email address</li>
+            <li>Follow the instructions sent to your email</li>
+          </ol>
+          <p>
+            If you don't receive the reset email, check your spam folder or
+            contact support.
+          </p>
+        </div>
+      </div>
+      <h2 id="plant-care">Plant Care FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          How accurate is the plant identification feature?
+        </div>
+        <div class="faq-answer">
+          <p>
+            BotaniX uses Google's Gemini Flash 4.0 AI model for plant
+            identification, which offers approximately 98.7% accuracy for common
+            species and 94.2% for rare species. For best results:
+          </p>
+          <ul>
+            <li>Take clear, well-lit photos</li>
+            <li>
+              Focus on distinctive features like leaves, flowers, or stems
+            </li>
+            <li>Try multiple angles if the first scan is inconclusive</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can BotaniX detect all plant diseases?</div>
+        <div class="faq-answer">
+          <p>
+            BotaniX can identify over 150 common plant diseases with 96.3%
+            accuracy. While our disease detection is comprehensive, some rare or
+            emerging plant diseases may not be immediately recognized. Our
+            database is continuously updated to improve detection capabilities.
+          </p>
+          <p>
+            If you encounter a disease that isn't recognized, you can share it
+            in the community section where other users or our team might help
+            identify it.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I get the most accurate soil analysis?
+        </div>
+        <div class="faq-answer">
+          <p>For optimal soil analysis results:</p>
+          <ul>
+            <li>Take a fresh soil sample from 2-3 inches below the surface</li>
+            <li>Remove any debris, stones, or plant material</li>
+            <li>Place the soil on a neutral-colored surface</li>
+            <li>Take the photo in natural daylight without shadows</li>
+            <li>Ensure the soil is slightly damp but not wet</li>
+          </ul>
+          <p>
+            Our soil analysis can estimate NPK values, pH, and moisture content
+            within 7% of laboratory testing for most soil types.
+          </p>
+        </div>
+      </div>
+      <h2 id="community">Community FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I share my plants with the community?
+        </div>
+        <div class="faq-answer">
+          <p>To share with the BotaniX community:</p>
+          <ol>
+            <li>Navigate to the Community tab</li>
+            <li>Tap the "+" button in the bottom right</li>
+            <li>Select a photo from your gallery or take a new one</li>
+            <li>Add a title and description</li>
+            <li>Choose relevant tags to help others find your post</li>
+            <li>Tap "Share" to publish</li>
+          </ol>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Are there community guidelines I should follow?
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes, we maintain a positive and helpful community environment by
+            asking all users to:
+          </p>
+          <ul>
+            <li>Be respectful and supportive of other gardeners</li>
+            <li>Only share plant-related content</li>
+            <li>Give constructive feedback and advice</li>
+            <li>Avoid promotional or commercial posts</li>
+            <li>Respect others' privacy and intellectual property</li>
+          </ul>
+          <p>
+            Content that violates these guidelines may be removed, and repeated
+            violations could result in account restrictions.
+          </p>
+        </div>
+      </div>
+      <h2>Contact Support</h2>
+      <p>
+        Can't find the answer you're looking for? Contact our support team
+        directly:
+      </p>
+      <div class="contact-form">
+        <form id="supportForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="issue">Issue Type</label>
+            <select id="issue" name="issue" required>
+              <option value="">Select an issue type</option>
+              <option value="account">Account Problem</option>
+              <option value="scanning">Scanning Feature</option>
+              <option value="plants">Plant Identification</option>
+              <option value="diseases">Disease Detection</option>
+              <option value="soil">Soil Analysis</option>
+              <option value="community">Community Feature</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+      </div>
+      <div class="highlight">
+        <p><strong>Support Email:</strong> bhardwaj.hardik6111@gmail.com</p>
+        <p>
+          We typically respond to all inquiries within 24-48 hours during
+          business days.
+        </p>
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 BotaniX. All rights reserved.</p>
+      <p>
+        We are committed to protecting your privacy and ensuring the safety and
+        integrity of your data.<br />Thank you for trusting BotaniX for making
+        your garden look healthy and Green.
+      </p>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </div>
+      <div class="footer-buttons">
+        <a href="privacy.html" class="footer-btn">
+          <span class="footer-btn-icon">🔒</span> View Privacy Policy
+        </a>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("supportForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Thank you for your message. Our support team will contact you shortly."
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
